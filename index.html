@@ -108,7 +108,8 @@
 
   .totals { min-width: 0 !important; }
   .totals td { font-size: 14.5px; }
-  .totals td:last-child { text-align: right; white-space: nowrap; font-weight: 500; }
+  .totals td:not(:first-child) { text-align: right; white-space: nowrap; font-weight: 500; }
+  .totals thead th:not(:first-child) { text-align: right; }
   .totals tr.strong td { font-weight: 700; background: var(--total-bg); }
   .totals tr.final td { font-weight: 700; background: var(--accent-soft); color: var(--accent); font-size: 17px; }
 
@@ -123,6 +124,33 @@
   ol.notes li::marker { color: var(--accent); font-weight: 600; }
   ol.notes b { color: var(--ink); }
 
+  .gantt-wrap {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    box-shadow: var(--shadow); overflow-x: auto;
+  }
+  .gantt { min-width: 940px; padding: 16px 18px 14px; }
+  .g-axis { position: relative; height: 40px; margin-left: 232px; }
+  .g-month {
+    position: absolute; top: 0; font-size: 11px; font-weight: 600;
+    letter-spacing: .07em; text-transform: uppercase; color: var(--accent);
+  }
+  .g-tick { position: absolute; bottom: 3px; font-size: 10.5px; color: var(--faint); transform: translateX(-50%); white-space: nowrap; }
+  .g-chart { position: relative; }
+  .g-bg { position: absolute; left: 232px; right: 0; top: 0; bottom: 0; border-left: 1px solid var(--line); }
+  .g-we { position: absolute; top: 0; bottom: 0; background: var(--line); opacity: .38; }
+  .g-oct { position: absolute; top: -40px; bottom: 0; border-left: 1px dashed var(--faint); }
+  .g-row { display: flex; align-items: center; min-height: 36px; position: relative; }
+  .g-label { width: 232px; flex: none; font-size: 12.5px; font-weight: 600; padding-right: 12px; line-height: 1.25; }
+  .g-label small { display: block; font-weight: 400; color: var(--faint); font-size: 11px; }
+  .g-track { position: relative; flex: 1; height: 36px; }
+  .g-trip { position: absolute; top: 11px; height: 14px; background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 7px; box-sizing: border-box; }
+  .g-ev { position: absolute; top: 14px; height: 8px; background: var(--accent); border-radius: 4px; }
+  .g-legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 12px; padding-left: 232px; font-size: 12px; color: var(--muted); }
+  .g-legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .g-key-trip { width: 26px; height: 12px; background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 6px; flex: none; }
+  .g-key-ev { width: 26px; height: 8px; background: var(--accent); border-radius: 4px; flex: none; }
+  .g-key-we { width: 14px; height: 14px; background: var(--line); opacity: .55; flex: none; }
+
   .foot { color: var(--faint); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; }
   a { color: var(--accent); }
 </style>
@@ -134,13 +162,14 @@
   <header>
     <p class="eyebrow">Cerebro · Click Out · командировки</p>
     <h1>Смета командировок: сентябрь - октябрь 2026</h1>
-    <p class="lede">Выезды Никиты Омельченко из Саратова на мероприятия эшелона 1 и значимые Э2 по программе привлечения клиентов. Правило поездок: возврат домой в пятницу или по окончании мероприятия, все выходные в Саратове. Версия 3 от 26.08.2026, цены билетов проверены по официальным сайтам.</p>
+    <p class="lede">Выезды Никиты Омельченко из Саратова на мероприятия эшелона 1 и значимые Э2 по программе привлечения клиентов. Правило поездок: возврат домой в пятницу или по окончании мероприятия, все выходные в Саратове. Версия 4 от 26.08.2026, цены билетов проверены по официальным сайтам.</p>
   </header>
 
   <section class="cards">
     <div class="card main">
       <p class="k">К согласованию</p>
-      <p class="v">≈ 430 000 ₽</p>
+      <p class="v">≈ 483 000 ₽</p>
+      <p class="k" style="margin-top:6px">сентябрь ≈ 257 000 · октябрь ≈ 226 000</p>
     </div>
     <div class="card">
       <p class="k">Поездок</p>
@@ -157,8 +186,89 @@
   </section>
 
   <section>
+    <h2>График поездок</h2>
+    <p class="sub">Шкала: 01.09 - 31.10.2026. Светлая полоса - вся поездка от вылета до возврата, тёмный сегмент - дни на мероприятии, серые колонки - выходные (дома в Саратове).</p>
+    <div class="gantt-wrap">
+      <div class="gantt">
+        <div class="g-axis">
+          <span class="g-month" style="left:0">Сентябрь</span>
+          <span class="g-month" style="left:49.18%; padding-left:8px;">Октябрь</span>
+          <span class="g-tick" style="left:0">01.09</span>
+          <span class="g-tick" style="left:9.836%">07.09</span>
+          <span class="g-tick" style="left:21.311%">14.09</span>
+          <span class="g-tick" style="left:32.787%">21.09</span>
+          <span class="g-tick" style="left:44.262%">28.09</span>
+          <span class="g-tick" style="left:55.738%">05.10</span>
+          <span class="g-tick" style="left:67.213%">12.10</span>
+          <span class="g-tick" style="left:78.689%">19.10</span>
+          <span class="g-tick" style="left:90.164%">26.10</span>
+        </div>
+        <div class="g-chart">
+          <div class="g-bg">
+            <div class="g-we" style="left:6.557%; width:3.279%"></div>
+            <div class="g-we" style="left:18.033%; width:3.279%"></div>
+            <div class="g-we" style="left:29.508%; width:3.279%"></div>
+            <div class="g-we" style="left:40.984%; width:3.279%"></div>
+            <div class="g-we" style="left:52.459%; width:3.279%"></div>
+            <div class="g-we" style="left:63.934%; width:3.279%"></div>
+            <div class="g-we" style="left:75.410%; width:3.279%"></div>
+            <div class="g-we" style="left:86.885%; width:3.279%"></div>
+            <div class="g-we" style="left:98.361%; width:1.639%"></div>
+            <div class="g-oct" style="left:49.18%"></div>
+          </div>
+          <div class="g-row">
+            <div class="g-label">Конгресс офтальмологов ⭐<small>поездка 01 - 04.09 · Москва</small></div>
+            <div class="g-track"><div class="g-trip" style="left:0; width:6.557%"></div><div class="g-ev" style="left:1.639%; width:4.918%"></div></div>
+          </div>
+          <div class="g-row">
+            <div class="g-label">XXXVI конференция РАРЧ ⭐<small>поездка 08 - 12.09 · Москва</small></div>
+            <div class="g-track"><div class="g-trip" style="left:11.475%; width:8.197%"></div><div class="g-ev" style="left:13.115%; width:6.557%"></div></div>
+          </div>
+          <div class="g-row">
+            <div class="g-label">WorldFood Moscow<small>поездка 14 - 18.09 · Москва</small></div>
+            <div class="g-track"><div class="g-trip" style="left:21.311%; width:8.197%"></div><div class="g-ev" style="left:22.951%; width:6.557%"></div></div>
+          </div>
+          <div class="g-row">
+            <div class="g-label">Дентал-Экспо ⭐<small>поездка 20 - 25.09 · Москва</small></div>
+            <div class="g-track"><div class="g-trip" style="left:31.148%; width:9.836%"></div><div class="g-ev" style="left:32.787%; width:6.557%"></div></div>
+          </div>
+          <div class="g-row">
+            <div class="g-label">ПаркЗоо<small>та же поездка · дни 23 - 25.09</small></div>
+            <div class="g-track"><div class="g-trip" style="left:31.148%; width:9.836%"></div><div class="g-ev" style="left:36.066%; width:4.918%"></div></div>
+          </div>
+          <div class="g-row">
+            <div class="g-label">BUYBRAND Expo ⭐<small>поездка 28.09 - 02.10 · дни 29 - 30.09, Москва</small></div>
+            <div class="g-track"><div class="g-trip" style="left:44.262%; width:8.197%"></div><div class="g-ev" style="left:45.902%; width:3.279%"></div></div>
+          </div>
+          <div class="g-row">
+            <div class="g-label">100+ TechnoBuild ⭐<small>та же поездка · дни 01 - 02.10, Екатеринбург</small></div>
+            <div class="g-track"><div class="g-trip" style="left:44.262%; width:8.197%"></div><div class="g-ev" style="left:49.180%; width:3.279%"></div></div>
+          </div>
+          <div class="g-row">
+            <div class="g-label">Headconf (hh.ru)<small>поездка 07 - 09.10 · Москва</small></div>
+            <div class="g-track"><div class="g-trip" style="left:59.016%; width:4.918%"></div><div class="g-ev" style="left:60.656%; width:1.639%"></div></div>
+          </div>
+          <div class="g-row">
+            <div class="g-label">InterCHARM<small>поездка 13 - 16.10 · Москва</small></div>
+            <div class="g-track"><div class="g-trip" style="left:68.852%; width:6.557%"></div><div class="g-ev" style="left:70.492%; width:4.918%"></div></div>
+          </div>
+          <div class="g-row">
+            <div class="g-label">PIR Expo ⭐<small>поездка 25 - 29.10 · Москва</small></div>
+            <div class="g-track"><div class="g-trip" style="left:88.525%; width:8.197%"></div><div class="g-ev" style="left:90.164%; width:6.557%"></div></div>
+          </div>
+        </div>
+        <div class="g-legend">
+          <span><i class="g-key-trip"></i> поездка (вылет - возврат)</span>
+          <span><i class="g-key-ev"></i> дни на мероприятии</span>
+          <span><i class="g-key-we"></i> выходные - дома в Саратове</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <h2>Расходы по мероприятиям</h2>
-    <p class="sub">Ставки утверждены 08.07.2026: авиаплечо Саратов - Москва ~6 500 ₽, отель Москва 3★ с завтраком ~6 000 ₽/ночь, Екатеринбург ~5 000 ₽/ночь, суточные 700 ₽/день. Мероприятия одной поездки делят перелёты и отель: у каждой строки - её доля, стоимость перелёта «туда» стоит на первом событии поездки, «обратно» - на последнем. Сумма всех «Итого» равна итогу сметы.</p>
+    <p class="sub">Ставки: авиаплечо Саратов - Москва ~6 500 ₽, отель Москва 3★ с завтраком ~6 000 ₽/ночь, Екатеринбург ~5 000 ₽/ночь (утверждены 08.07.2026); суточные 2 000 ₽/день - расчёт от реального дня, обоснование ниже. Мероприятия одной поездки делят перелёты и отель: у каждой строки - её доля, стоимость перелёта «туда» стоит на первом событии поездки, «обратно» - на последнем. Сумма всех «Итого» равна итогу сметы.</p>
     <div class="table-wrap">
       <table>
         <thead>
@@ -178,9 +288,9 @@
             <td class="num">пт 04.09</td>
             <td class="num">6 500</td>
             <td class="num">18 000<span class="note">3 ночи</span></td>
-            <td class="num">2 800<span class="note">4 дня</span></td>
+            <td class="num">8 000<span class="note">4 дня</span></td>
             <td class="num free">0<span class="note">бесплатно, рег. reg.oor.ru</span></td>
-            <td class="rowtotal">33 800</td>
+            <td class="rowtotal">39 000</td>
           </tr>
           <tr>
             <td class="month-td">Сентябрь</td><td class="num">09-12.09<span class="note">ср - сб</span></td>
@@ -190,9 +300,9 @@
             <td class="num">сб 12.09</td>
             <td class="num">6 500</td>
             <td class="num">24 000<span class="note">4 ночи</span></td>
-            <td class="num">3 500<span class="note">5 дней</span></td>
+            <td class="num">10 000<span class="note">5 дней</span></td>
             <td class="num">18 500<span class="note">делегат, не член РАРЧ</span></td>
-            <td class="rowtotal">59 000</td>
+            <td class="rowtotal">65 500</td>
           </tr>
           <tr>
             <td class="month-td">Сентябрь</td><td class="num">15-18.09<span class="note">вт - пт</span></td>
@@ -202,9 +312,9 @@
             <td class="num">пт 18.09</td>
             <td class="num">6 500</td>
             <td class="num">24 000<span class="note">4 ночи</span></td>
-            <td class="num">3 500<span class="note">5 дней</span></td>
+            <td class="num">10 000<span class="note">5 дней</span></td>
             <td class="num">500<span class="note">онлайн</span></td>
-            <td class="rowtotal">41 000</td>
+            <td class="rowtotal">47 500</td>
           </tr>
           <tr>
             <td class="month-td">Сентябрь</td><td class="num">21-24.09<span class="note">пн - чт</span></td>
@@ -214,9 +324,9 @@
             <td class="num">пт 25.09<span class="note">одной поездкой с ПаркЗоо</span></td>
             <td class="same">в строке ПаркЗоо</td>
             <td class="num">18 000<span class="note">3 ночи</span></td>
-            <td class="num">2 800<span class="note">4 дня</span></td>
+            <td class="num">8 000<span class="note">4 дня</span></td>
             <td class="num free">0<span class="note">ранняя онлайн-регистрация</span></td>
-            <td class="rowtotal">27 300</td>
+            <td class="rowtotal">32 500</td>
           </tr>
           <tr>
             <td class="month-td">Сентябрь</td><td class="num">23-25.09<span class="note">ср - пт</span></td>
@@ -226,9 +336,9 @@
             <td class="num">пт 25.09</td>
             <td class="num">6 500</td>
             <td class="num">12 000<span class="note">2 ночи</span></td>
-            <td class="num">1 400<span class="note">2 дня</span></td>
+            <td class="num">4 000<span class="note">2 дня</span></td>
             <td class="num free">0<span class="note">B2B, регистрация обязательна</span></td>
-            <td class="rowtotal">19 900</td>
+            <td class="rowtotal">22 500</td>
           </tr>
           <tr>
             <td class="month-td">Сентябрь</td><td class="num">29-30.09<span class="note">вт - ср</span></td>
@@ -238,9 +348,9 @@
             <td class="num">ср 30.09<span class="note">переезд в Екатеринбург</span></td>
             <td class="same">перелёт в строке 100+</td>
             <td class="num">12 000<span class="note">2 ночи, Москва</span></td>
-            <td class="num">2 100<span class="note">3 дня</span></td>
+            <td class="num">6 000<span class="note">3 дня</span></td>
             <td class="num">2 000<span class="note">тариф «Старт»</span></td>
-            <td class="rowtotal">22 600</td>
+            <td class="rowtotal">26 500</td>
           </tr>
           <tr>
             <td class="month-td">Октябрь</td><td class="num">01-02.10<span class="note">чт - пт</span></td>
@@ -250,9 +360,9 @@
             <td class="num">пт 02.10<span class="note">Екатеринбург - Саратов</span></td>
             <td class="num">6 500</td>
             <td class="num">10 000<span class="note">2 ночи</span></td>
-            <td class="num">1 400<span class="note">2 дня</span></td>
+            <td class="num">4 000<span class="note">2 дня</span></td>
             <td class="num free">0<span class="note">бесплатно, регистрация</span></td>
-            <td class="rowtotal">24 400</td>
+            <td class="rowtotal">27 000</td>
           </tr>
           <tr>
             <td class="month-td">Октябрь</td><td class="num">08.10<span class="note">чт</span></td>
@@ -262,9 +372,9 @@
             <td class="num">пт 09.10<span class="note">после вечерней программы</span></td>
             <td class="num">6 500</td>
             <td class="num">12 000<span class="note">2 ночи</span></td>
-            <td class="num">2 100<span class="note">3 дня</span></td>
+            <td class="num">6 000<span class="note">3 дня</span></td>
             <td class="num">60 000<span class="note">единый тариф, с НДС</span></td>
-            <td class="rowtotal">87 100</td>
+            <td class="rowtotal">91 000</td>
           </tr>
           <tr>
             <td class="month-td">Октябрь</td><td class="num">14-17.10<span class="note">ср - сб</span></td>
@@ -274,9 +384,9 @@
             <td class="num">пт 16.10</td>
             <td class="num">6 500</td>
             <td class="num">18 000<span class="note">3 ночи</span></td>
-            <td class="num">2 800<span class="note">4 дня</span></td>
+            <td class="num">8 000<span class="note">4 дня</span></td>
             <td class="num">500<span class="note">бейдж; по промокоду «КРАСОТА» - 0</span></td>
-            <td class="rowtotal">34 300</td>
+            <td class="rowtotal">39 500</td>
           </tr>
           <tr>
             <td class="month-td">Октябрь</td><td class="num">26-29.10<span class="note">пн - чт</span></td>
@@ -286,9 +396,9 @@
             <td class="num">чт 29.10</td>
             <td class="num">6 500</td>
             <td class="num">24 000<span class="note">4 ночи</span></td>
-            <td class="num">3 500<span class="note">5 дней</span></td>
+            <td class="num">10 000<span class="note">5 дней</span></td>
             <td class="num">1 000<span class="note">онлайн до 25.10</span></td>
-            <td class="rowtotal">41 500</td>
+            <td class="rowtotal">48 000</td>
           </tr>
         </tbody>
       </table>
@@ -299,14 +409,17 @@
     <h2>Итоги</h2>
     <div class="table-wrap">
       <table class="totals">
+        <thead>
+          <tr><th>Статья</th><th>Сентябрь</th><th>Октябрь</th><th>Всего</th></tr>
+        </thead>
         <tbody>
-          <tr><td>Перелёты, 17 плеч</td><td>110 500 ₽</td></tr>
-          <tr><td>Отели с завтраком: 27 ночей Москва + 2 ночи Екатеринбург</td><td>172 000 ₽</td></tr>
-          <tr><td>Суточные: 37 дней × 700 ₽</td><td>25 900 ₽</td></tr>
-          <tr><td>Билеты на мероприятия, все 10</td><td>82 500 ₽</td></tr>
-          <tr class="strong"><td>Итого по смете</td><td>390 900 ₽</td></tr>
-          <tr><td>Резерв 10%: билеты на сентябрь покупаются уже впритык</td><td>~39 000 ₽</td></tr>
-          <tr class="final"><td>К согласованию</td><td>≈ 430 000 ₽</td></tr>
+          <tr><td>Перелёты, 17 плеч</td><td>58 500</td><td>52 000</td><td>110 500 ₽</td></tr>
+          <tr><td>Отели с завтраком: 27 ночей Москва + 2 ночи Екатеринбург</td><td>108 000</td><td>64 000</td><td>172 000 ₽</td></tr>
+          <tr><td>Суточные, 2 000 ₽/день: 23 дня + 14 дней</td><td>46 000</td><td>28 000</td><td>74 000 ₽</td></tr>
+          <tr><td>Билеты на мероприятия, все 10</td><td>21 000</td><td>61 500</td><td>82 500 ₽</td></tr>
+          <tr class="strong"><td>Итого по смете</td><td>233 500</td><td>205 500</td><td>439 000 ₽</td></tr>
+          <tr><td>Резерв 10%: билеты на сентябрь покупаются уже впритык</td><td>~23 400</td><td>~20 600</td><td>~44 000 ₽</td></tr>
+          <tr class="final"><td>К согласованию</td><td>≈ 257 000</td><td>≈ 226 000</td><td>≈ 483 000 ₽</td></tr>
         </tbody>
       </table>
     </div>
@@ -315,10 +428,10 @@
   <section>
     <h2>Обоснование суточных</h2>
     <ol class="notes">
-      <li><b>Ставка 700 ₽/день</b> - законодательный необлагаемый лимит для командировок по России (п. 1 ст. 217 НК РФ): до этой суммы суточные не облагаются НДФЛ и страховыми взносами, чеки на питание для подтверждения не нужны. Ставка утверждена 08.07.2026, превышения лимита нет.</li>
-      <li><b>Счёт дней:</b> суточные начисляются за каждый календарный день поездки, включая день выезда и день возвращения (п. 4 Положения о служебных командировках, постановление Правительства РФ № 749 от 13.10.2008). Пример: конгресс - вылет вт 01.09, возврат пт 04.09, это 4 дня × 700 ₽ = 2 800 ₽.</li>
-      <li><b>Что покрывают:</b> питание сверх завтрака (завтрак уже входит в ставку отеля) и городские расходы - метро и такси до площадок.</li>
-      <li><b>Итог по смете:</b> 37 дней × 700 ₽ = 25 900 ₽. Разбивка по поездкам: 4 + 5 + 5 + 6 + 5 + 3 + 4 + 5 = 37 дней.</li>
+      <li><b>Ставка 2 000 ₽/день</b> - расчёт от реального дня командировки: проезд по городу до площадки ~300 ₽ (метро/МЦД 2-4 поездки: Крокус Экспо - м. Мякинино, ЦМТ - м. Выставочная, плюс резерв на такси), обед - бизнес-ланч ~700 ₽, ужин - кафе среднего сегмента ~1 000 ₽. Завтрак в суточные не входит - он уже в ставке отеля. Ставка единая для Москвы и Екатеринбурга.</li>
+      <li><b>Счёт дней:</b> суточные начисляются за каждый календарный день поездки, включая день выезда и день возвращения (п. 4 Положения о служебных командировках, постановление Правительства РФ № 749 от 13.10.2008). Пример: конгресс - вылет вт 01.09, возврат пт 04.09, это 4 дня × 2 000 ₽ = 8 000 ₽.</li>
+      <li><b>Налоговая справка:</b> необлагаемый лимит суточных - 700 ₽/день (п. 1 ст. 217 НК РФ); часть сверх лимита (1 300 ₽/день) при оформлении либо облагается НДФЛ, либо закрывается чеками как компенсация фактических расходов на проезд и питание - решить с бухгалтерией при согласовании.</li>
+      <li><b>Итог по смете:</b> 37 дней × 2 000 ₽ = 74 000 ₽ (сентябрь 23 дня = 46 000 ₽, октябрь 14 дней = 28 000 ₽). Разбивка по поездкам: 4 + 5 + 5 + 6 + 5 + 3 + 4 + 5 = 37 дней.</li>
     </ol>
   </section>
 
