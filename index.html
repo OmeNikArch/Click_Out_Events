@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Смета командировок IX–X 2026 · Cerebro Click Out</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,600;7..72,700&family=Golos+Text:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --paper: #F7F9FA;
+    --surface: #FFFFFF;
+    --ink: #1B242E;
+    --muted: #5C6B7A;
+    --faint: #8794A1;
+    --line: #DDE4EA;
+    --accent: #145C8E;
+    --accent-soft: #E8F0F7;
+    --warn: #B07A18;
+    --warn-soft: #FBF3E2;
+    --ok: #2E7D4F;
+    --total-bg: #EEF4F9;
+    --shadow: 0 1px 3px rgba(27,36,46,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #141A21;
+      --surface: #1B232D;
+      --ink: #E7EDF3;
+      --muted: #9AA8B6;
+      --faint: #6E7D8B;
+      --line: #2C3742;
+      --accent: #6FB1DC;
+      --accent-soft: #1E2E3C;
+      --warn: #D9A94E;
+      --warn-soft: #2E2717;
+      --ok: #6CBE8E;
+      --total-bg: #20303F;
+      --shadow: 0 1px 3px rgba(0,0,0,.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Golos Text", "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0;
+    padding: 40px 20px 72px;
+  }
+  .page { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
+
+  .eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 10px;
+  }
+  h1 {
+    font-family: "Literata", Georgia, serif;
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 700; line-height: 1.15; margin: 0 0 10px; text-wrap: balance;
+  }
+  .lede { color: var(--muted); max-width: 62ch; margin: 0; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 16px 18px; box-shadow: var(--shadow);
+  }
+  .card .k { font-size: 12px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
+  .card .v { font-family: "Literata", Georgia, serif; font-size: 26px; font-weight: 600; margin: 0; font-variant-numeric: tabular-nums; }
+  .card .v small { font-size: 15px; font-weight: 500; color: var(--muted); }
+  .card.main { border-color: var(--accent); background: var(--accent-soft); }
+  .card.main .v { color: var(--accent); }
+
+  h2 {
+    font-family: "Literata", Georgia, serif;
+    font-size: 21px; font-weight: 600; margin: 0 0 6px; text-wrap: balance;
+  }
+  .sub { color: var(--muted); font-size: 14px; margin: 0 0 16px; max-width: 75ch; }
+
+  .table-wrap {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    box-shadow: var(--shadow); overflow-x: auto;
+  }
+  table { border-collapse: collapse; width: 100%; min-width: 1260px; font-size: 13.5px; }
+  thead th {
+    font-size: 11.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--muted); text-align: left; padding: 12px 12px 10px;
+    border-bottom: 2px solid var(--line); white-space: nowrap;
+  }
+  tbody td {
+    padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top;
+    font-variant-numeric: tabular-nums;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  td.num { white-space: nowrap; }
+  td .note { display: block; color: var(--faint); font-size: 12px; margin-top: 2px; font-variant-numeric: normal; white-space: normal; }
+  .ev { font-weight: 600; min-width: 210px; }
+  .ev .tag { font-weight: 400; color: var(--muted); }
+  .month-td { font-weight: 600; color: var(--accent); white-space: nowrap; }
+  .same { color: var(--faint); }
+  .free { color: var(--ok); font-weight: 600; }
+  td.rowtotal { font-weight: 700; white-space: nowrap; background: var(--total-bg); }
+
+  .totals { min-width: 0 !important; }
+  .totals td { font-size: 14.5px; }
+  .totals td:last-child { text-align: right; white-space: nowrap; font-weight: 500; }
+  .totals tr.strong td { font-weight: 700; background: var(--total-bg); }
+  .totals tr.final td { font-weight: 700; background: var(--accent-soft); color: var(--accent); font-size: 17px; }
+
+  .block {
+    background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+    border-radius: 8px; padding: 18px 22px; box-shadow: var(--shadow); max-width: 100%;
+  }
+  .block h2 { font-size: 18px; }
+  .block p { margin: 8px 0 0; max-width: 78ch; }
+
+  ol.notes { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; max-width: 82ch; }
+  ol.notes li::marker { color: var(--accent); font-weight: 600; }
+  ol.notes b { color: var(--ink); }
+
+  .foot { color: var(--faint); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header>
+    <p class="eyebrow">Cerebro · Click Out · командировки</p>
+    <h1>Смета командировок: сентябрь - октябрь 2026</h1>
+    <p class="lede">Выезды Никиты Омельченко из Саратова на мероприятия эшелона 1 и значимые Э2 по программе привлечения клиентов. Правило поездок: возврат домой в пятницу или по окончании мероприятия, все выходные в Саратове. Версия 3 от 26.08.2026, цены билетов проверены по официальным сайтам.</p>
+  </header>
+
+  <section class="cards">
+    <div class="card main">
+      <p class="k">К согласованию</p>
+      <p class="v">≈ 430 000 ₽</p>
+    </div>
+    <div class="card">
+      <p class="k">Поездок</p>
+      <p class="v">8 <small>· 10 мероприятий</small></p>
+    </div>
+    <div class="card">
+      <p class="k">Дней вне Саратова</p>
+      <p class="v">37 <small>за 2 месяца</small></p>
+    </div>
+    <div class="card">
+      <p class="k">Из них ⭐ приоритетных</p>
+      <p class="v">6 <small>из топ-10 сезона</small></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Расходы по мероприятиям</h2>
+    <p class="sub">Ставки утверждены 08.07.2026: авиаплечо Саратов - Москва ~6 500 ₽, отель Москва 3★ с завтраком ~6 000 ₽/ночь, Екатеринбург ~5 000 ₽/ночь, суточные 700 ₽/день. Мероприятия одной поездки делят перелёты и отель: у каждой строки - её доля, стоимость перелёта «туда» стоит на первом событии поездки, «обратно» - на последнем. Сумма всех «Итого» равна итогу сметы.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Месяц</th><th>Дата</th><th>Мероприятие</th>
+            <th>Дата туда</th><th>Самолёт туда</th>
+            <th>Дата обратно</th><th>Самолёт обратно</th>
+            <th>Отель с завтраком</th><th>Суточные</th><th>Билет на мероприятие</th><th>Итого</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="month-td">Сентябрь</td><td class="num">02-04.09<span class="note">ср - пт</span></td>
+            <td class="ev">Конгресс катарактальной и рефракционной хирургии ⭐<span class="note tag">Э1 · офтальмология · ЦМТ, Москва</span></td>
+            <td class="num">вт 01.09</td>
+            <td class="num">6 500</td>
+            <td class="num">пт 04.09</td>
+            <td class="num">6 500</td>
+            <td class="num">18 000<span class="note">3 ночи</span></td>
+            <td class="num">2 800<span class="note">4 дня</span></td>
+            <td class="num free">0<span class="note">бесплатно, рег. reg.oor.ru</span></td>
+            <td class="rowtotal">33 800</td>
+          </tr>
+          <tr>
+            <td class="month-td">Сентябрь</td><td class="num">09-12.09<span class="note">ср - сб</span></td>
+            <td class="ev">XXXVI конференция РАРЧ ⭐<span class="note tag">Э1 · клиники ЭКО · кластер «Ломоносов», Москва</span></td>
+            <td class="num">вт 08.09</td>
+            <td class="num">6 500</td>
+            <td class="num">сб 12.09</td>
+            <td class="num">6 500</td>
+            <td class="num">24 000<span class="note">4 ночи</span></td>
+            <td class="num">3 500<span class="note">5 дней</span></td>
+            <td class="num">18 500<span class="note">делегат, не член РАРЧ</span></td>
+            <td class="rowtotal">59 000</td>
+          </tr>
+          <tr>
+            <td class="month-td">Сентябрь</td><td class="num">15-18.09<span class="note">вт - пт</span></td>
+            <td class="ev">WorldFood Moscow<span class="note tag">Э1 · доставка еды · Крокус Экспо</span></td>
+            <td class="num">пн 14.09</td>
+            <td class="num">6 500</td>
+            <td class="num">пт 18.09</td>
+            <td class="num">6 500</td>
+            <td class="num">24 000<span class="note">4 ночи</span></td>
+            <td class="num">3 500<span class="note">5 дней</span></td>
+            <td class="num">500<span class="note">онлайн</span></td>
+            <td class="rowtotal">41 000</td>
+          </tr>
+          <tr>
+            <td class="month-td">Сентябрь</td><td class="num">21-24.09<span class="note">пн - чт</span></td>
+            <td class="ev">Дентал-Экспо ⭐<span class="note tag">Э1+Э2 · стоматологии · Крокус Экспо</span></td>
+            <td class="num">вс 20.09</td>
+            <td class="num">6 500</td>
+            <td class="num">пт 25.09<span class="note">одной поездкой с ПаркЗоо</span></td>
+            <td class="same">в строке ПаркЗоо</td>
+            <td class="num">18 000<span class="note">3 ночи</span></td>
+            <td class="num">2 800<span class="note">4 дня</span></td>
+            <td class="num free">0<span class="note">ранняя онлайн-регистрация</span></td>
+            <td class="rowtotal">27 300</td>
+          </tr>
+          <tr>
+            <td class="month-td">Сентябрь</td><td class="num">23-25.09<span class="note">ср - пт</span></td>
+            <td class="ev">ПаркЗоо<span class="note tag">Э2 · ветклиники, груминг · Крокус Экспо, та же поездка</span></td>
+            <td class="num same">вс 20.09<span class="note">та же поездка</span></td>
+            <td class="same">-</td>
+            <td class="num">пт 25.09</td>
+            <td class="num">6 500</td>
+            <td class="num">12 000<span class="note">2 ночи</span></td>
+            <td class="num">1 400<span class="note">2 дня</span></td>
+            <td class="num free">0<span class="note">B2B, регистрация обязательна</span></td>
+            <td class="rowtotal">19 900</td>
+          </tr>
+          <tr>
+            <td class="month-td">Сентябрь</td><td class="num">29-30.09<span class="note">вт - ср</span></td>
+            <td class="ev">BUYBRAND Expo ⭐<span class="note tag">Э1 · франшизы · Тимирязев Центр, дни 1-2 из 3</span></td>
+            <td class="num">пн 28.09</td>
+            <td class="num">6 500</td>
+            <td class="num">ср 30.09<span class="note">переезд в Екатеринбург</span></td>
+            <td class="same">перелёт в строке 100+</td>
+            <td class="num">12 000<span class="note">2 ночи, Москва</span></td>
+            <td class="num">2 100<span class="note">3 дня</span></td>
+            <td class="num">2 000<span class="note">тариф «Старт»</span></td>
+            <td class="rowtotal">22 600</td>
+          </tr>
+          <tr>
+            <td class="month-td">Октябрь</td><td class="num">01-02.10<span class="note">чт - пт</span></td>
+            <td class="ev">100+ TechnoBuild ⭐<span class="note tag">Э1 · застройщики · Екатеринбург-ЭКСПО</span></td>
+            <td class="num">ср 30.09<span class="note">Москва - Екатеринбург</span></td>
+            <td class="num">6 500</td>
+            <td class="num">пт 02.10<span class="note">Екатеринбург - Саратов</span></td>
+            <td class="num">6 500</td>
+            <td class="num">10 000<span class="note">2 ночи</span></td>
+            <td class="num">1 400<span class="note">2 дня</span></td>
+            <td class="num free">0<span class="note">бесплатно, регистрация</span></td>
+            <td class="rowtotal">24 400</td>
+          </tr>
+          <tr>
+            <td class="month-td">Октябрь</td><td class="num">08.10<span class="note">чт</span></td>
+            <td class="ev">Headconf, конференция hh.ru<span class="note tag">Э1 · HR · площадка TAU, Москва</span></td>
+            <td class="num">ср 07.10</td>
+            <td class="num">6 500</td>
+            <td class="num">пт 09.10<span class="note">после вечерней программы</span></td>
+            <td class="num">6 500</td>
+            <td class="num">12 000<span class="note">2 ночи</span></td>
+            <td class="num">2 100<span class="note">3 дня</span></td>
+            <td class="num">60 000<span class="note">единый тариф, с НДС</span></td>
+            <td class="rowtotal">87 100</td>
+          </tr>
+          <tr>
+            <td class="month-td">Октябрь</td><td class="num">14-17.10<span class="note">ср - сб</span></td>
+            <td class="ev">InterCHARM<span class="note tag">Э1+Э2 · бьюти, косметология · Крокус Экспо, уход в пт 16.10</span></td>
+            <td class="num">вт 13.10</td>
+            <td class="num">6 500</td>
+            <td class="num">пт 16.10</td>
+            <td class="num">6 500</td>
+            <td class="num">18 000<span class="note">3 ночи</span></td>
+            <td class="num">2 800<span class="note">4 дня</span></td>
+            <td class="num">500<span class="note">бейдж; по промокоду «КРАСОТА» - 0</span></td>
+            <td class="rowtotal">34 300</td>
+          </tr>
+          <tr>
+            <td class="month-td">Октябрь</td><td class="num">26-29.10<span class="note">пн - чт</span></td>
+            <td class="ev">PIR Expo ⭐<span class="note tag">Э1+Э2 · HoReCa, доставка еды · Крокус Экспо</span></td>
+            <td class="num">вс 25.10</td>
+            <td class="num">6 500</td>
+            <td class="num">чт 29.10</td>
+            <td class="num">6 500</td>
+            <td class="num">24 000<span class="note">4 ночи</span></td>
+            <td class="num">3 500<span class="note">5 дней</span></td>
+            <td class="num">1 000<span class="note">онлайн до 25.10</span></td>
+            <td class="rowtotal">41 500</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Итоги</h2>
+    <div class="table-wrap">
+      <table class="totals">
+        <tbody>
+          <tr><td>Перелёты, 17 плеч</td><td>110 500 ₽</td></tr>
+          <tr><td>Отели с завтраком: 27 ночей Москва + 2 ночи Екатеринбург</td><td>172 000 ₽</td></tr>
+          <tr><td>Суточные: 37 дней × 700 ₽</td><td>25 900 ₽</td></tr>
+          <tr><td>Билеты на мероприятия, все 10</td><td>82 500 ₽</td></tr>
+          <tr class="strong"><td>Итого по смете</td><td>390 900 ₽</td></tr>
+          <tr><td>Резерв 10%: билеты на сентябрь покупаются уже впритык</td><td>~39 000 ₽</td></tr>
+          <tr class="final"><td>К согласованию</td><td>≈ 430 000 ₽</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Обоснование суточных</h2>
+    <ol class="notes">
+      <li><b>Ставка 700 ₽/день</b> - законодательный необлагаемый лимит для командировок по России (п. 1 ст. 217 НК РФ): до этой суммы суточные не облагаются НДФЛ и страховыми взносами, чеки на питание для подтверждения не нужны. Ставка утверждена 08.07.2026, превышения лимита нет.</li>
+      <li><b>Счёт дней:</b> суточные начисляются за каждый календарный день поездки, включая день выезда и день возвращения (п. 4 Положения о служебных командировках, постановление Правительства РФ № 749 от 13.10.2008). Пример: конгресс - вылет вт 01.09, возврат пт 04.09, это 4 дня × 700 ₽ = 2 800 ₽.</li>
+      <li><b>Что покрывают:</b> питание сверх завтрака (завтрак уже входит в ставку отеля) и городские расходы - метро и такси до площадок.</li>
+      <li><b>Итог по смете:</b> 37 дней × 700 ₽ = 25 900 ₽. Разбивка по поездкам: 4 + 5 + 5 + 6 + 5 + 3 + 4 + 5 = 37 дней.</li>
+    </ol>
+  </section>
+
+  <section class="block">
+    <h2>Headconf: обоснование самого дорогого билета (60 000 ₽)</h2>
+    <p>Конференция hh.ru собирает HR-директоров и директоров по подбору федеральных работодателей - логистика, ритейл, производство, доставка. Это ниша эшелона 1 боевого списка: массовый найм, бюджеты на привлечение кандидатов измеряются миллионами. Наше предложение им - докупать поток откликов рекламой вакансий на аудиторию покупателей Ozon и WB, когда воронка hh исчерпана или подорожала. Один клиент с порогом Э1 (360 000 ₽ без НДС в квартал) окупает билет в первый же квартал.</p>
+  </section>
+
+  <section>
+    <h2>Важные поправки и уточнения</h2>
+    <ol class="notes">
+      <li><b>Исключены решением руководителя направления 26.08:</b> Персонал Экспо (билет для не-HR гостя 25 500 ₽ + 2 дня поездки) и XXVII Саммит HR-директоров (~120 000 ₽, точная цена только по запросу) - ниша HR закрывается одним Headconf. Смета уменьшена с 549 800 ₽ до 390 900 ₽.</li>
+      <li><b>Конгресс офтальмологов перенесён.</b> В календаре программы стояли даты 08-10.10 (МНТК). По официальному сайту cataract-congress.ru издание 2026 проходит 02-04.09 в ЦМТ, к 40-летию МНТК. Смета построена по фактическим датам; до вылета 01.09 осталась неделя, регистрация и покупка авиабилетов нужны сразу после согласования.</li>
+      <li><b>РАРЧ:</b> взнос 18 500 ₽ - тариф «не член РАРЧ», идёт последний период оплаты.</li>
+      <li><b>Почему часть билетов платная:</b> выставки (Дентал-Экспо, ПаркЗоо, 100+, PIR, BUYBRAND) зарабатывают на экспонентах - вход для посетителей бесплатный или символический. Конференции (РАРЧ 18 500 ₽, Headconf 60 000 ₽) зарабатывают на участниках - билет включает деловую программу и нетворкинг, а цена фильтрует аудиторию до ЛПР с бюджетами.</li>
+      <li>Ставки перелётов и отелей - плановые ориентиры июля 2026 при покупке за 3-4 недели; сентябрь покупается позже норматива, на это заложен резерв 10%.</li>
+      <li>Из Э2 включён только ПаркЗоо: он идёт в те же дни и на той же площадке, что Дентал-Экспо, и не требует отдельной поездки. «Старшее поколение» (Э1, СПб) закрывают Фархутдинов и Глушонков без командировочных расходов.</li>
+    </ol>
+  </section>
+
+  <p class="foot">Источники цен билетов: официальные сайты мероприятий, проверено 26.08.2026. Подготовил Адам по поручению Никиты · Cerebro Click Out.</p>
+
+</div>
+
+</body>
+</html>
