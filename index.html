@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Смета командировок IX–X 2026 · Cerebro Click Out</title>
+<title>Выставки IX–X 2026 · Cerebro Click Out</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,600;7..72,700&family=Golos+Text:wght@400;500;600;700&display=swap">
@@ -153,36 +153,66 @@
 
   .foot { color: var(--faint); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; }
   a { color: var(--accent); }
+  /* карточки выставок */
+  .expo { display: grid; gap: 14px; }
+  .expo-item { background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; box-shadow: var(--shadow); }
+  .expo-item.opt { border-style: dashed; }
+  .expo-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 14px; margin-bottom: 4px; }
+  .expo-head h3 { font-size: 19px; margin: 0; }
+  .expo-date { font-weight: 600; color: var(--accent); white-space: nowrap; }
+  .expo-badge { font-size: 12px; font-weight: 600; padding: 2px 9px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  .expo-badge.free { background: #E4F2E9; color: var(--ok); }
+  .expo-badge.pay { background: var(--warn-soft); color: var(--warn); }
+  @media (prefers-color-scheme: dark) { .expo-badge.free { background: #1C2E24; } }
+  .expo-place { color: var(--muted); font-size: 14px; margin: 2px 0 12px; }
+  .expo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 10px 22px; font-size: 14px; }
+  .expo-grid dt { color: var(--faint); font-size: 12px; text-transform: uppercase;
+    letter-spacing: .04em; margin-bottom: 2px; }
+  .expo-grid dd { margin: 0 0 8px; color: var(--ink); }
+  .expo-stand { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line);
+    font-size: 14px; color: var(--muted); }
+  .expo-stand b { color: var(--ink); font-weight: 600; }
 </style>
 </head>
+
 <body>
 
 <div class="page">
 
   <header>
-    <p class="eyebrow">Cerebro · Click Out · командировки</p>
-    <h1>Смета командировок: сентябрь - октябрь 2026</h1>
-    <p class="lede">Выезды Никиты Омельченко из Саратова на мероприятия эшелона 1 и значимые Э2 по программе привлечения клиентов. Правило поездок: возврат домой в пятницу или по окончании мероприятия, все выходные в Саратове. Версия 6 от 26.08.2026, цены билетов проверены по официальным сайтам.</p>
+    <p class="eyebrow">Cerebro · Click Out · программа выставок</p>
+    <h1>Выставки сентября - октября 2026</h1>
+    <p class="lede">Выезды Никиты Омельченко из Саратова. В программе только выставки с экспозицией:
+    там, где у ниши есть стенды, к которым можно подойти и говорить с ЛПР. Конференции, форумы и
+    конгрессы без стендов из программы исключены - искать клиента среди таких же посетителей в зале
+    не работает, а вход туда стоит десятки тысяч рублей.</p>
   </header>
 
   <section>
     <div class="table-wrap">
       <table class="totals">
         <thead>
-          <tr><th></th><th>Сумма</th><th>Выставок</th><th>Дней на выставках</th><th>Из них ⭐ приоритетных</th></tr>
+          <tr><th></th><th>Сумма</th><th>Выставок</th><th>Дней на площадках</th><th>Из них ⭐ приоритетных</th></tr>
         </thead>
         <tbody>
-          <tr class="final"><td>Итого к согласованию</td><td>≈ 369 000 ₽</td><td>8</td><td>26</td><td>5</td></tr>
-          <tr><td>Сентябрь</td><td>≈ 273 000 ₽</td><td>6</td><td>19</td><td>4</td></tr>
-          <tr><td>Октябрь</td><td>≈ 96 000 ₽</td><td>2</td><td>7</td><td>1</td></tr>
+          <tr class="final"><td>Итого к согласованию</td><td>≈ 295 000 ₽</td><td>6</td><td>22</td><td>3</td></tr>
+          <tr><td>Сентябрь</td><td>≈ 200 000 ₽</td><td>4</td><td>15</td><td>2</td></tr>
+          <tr><td>Октябрь</td><td>≈ 95 000 ₽</td><td>2</td><td>7</td><td>1</td></tr>
+          <tr><td>Опция: РАППА Осень</td><td>+ 31 000 ₽</td><td>+1</td><td>+2</td><td>-</td></tr>
         </tbody>
       </table>
     </div>
+    <p class="sub">Против версии от 26.08 программа стала короче на 74 000 ₽ и на 5 дней вне дома:
+    сняты конференция РАРЧ и конгресс офтальмологов. Билеты на все шесть выставок стоят
+    2 500 ₽ вместе - выставка зарабатывает на экспонентах, а не на входе.</p>
   </section>
 
   <section>
     <h2>График поездок</h2>
-    <p class="sub">Шкала: 01.09 - 31.10.2026. Светлая полоса - вся поездка от вылета до возврата, тёмный сегмент - дни на мероприятии, серые колонки - выходные (дома в Саратове).</p>
+    <p class="sub">Шкала: 01.09 - 31.10.2026. Светлая полоса - вся поездка от выезда до возврата, тёмный сегмент - дни на площадке, серые колонки - выходные (дома в Саратове).</p>
     <div class="gantt-wrap">
       <div class="gantt">
         <div class="g-axis">
@@ -212,156 +242,311 @@
             <div class="g-oct" style="left:49.18%"></div>
           </div>
           <div class="g-row">
-            <div class="g-label">Конгресс офтальмологов ⭐<small>поездка 01 - 04.09 · Москва</small></div>
-            <div class="g-track"><div class="g-trip" style="left:0; width:6.557%"></div><div class="g-ev" style="left:1.639%; width:4.918%"></div></div>
+            <div class="g-label">ОТДЫХ Leisure<small>поездка 01 - 04.09 · Тимирязев Центр</small></div>
+            <div class="g-track">
+              <div class="g-trip" style="left:0; width:6.557%"></div>
+              <div class="g-ev" style="left:1.639%; width:4.918%"></div>
+            </div>
           </div>
           <div class="g-row">
-            <div class="g-label">XXXVI конференция РАРЧ ⭐<small>поездка 08 - 12.09 · Москва</small></div>
-            <div class="g-track"><div class="g-trip" style="left:11.475%; width:8.197%"></div><div class="g-ev" style="left:13.115%; width:6.557%"></div></div>
+            <div class="g-label">WorldFood Moscow<small>поездка 14 - 18.09 · Крокус Экспо</small></div>
+            <div class="g-track">
+              <div class="g-trip" style="left:21.311%; width:8.197%"></div>
+              <div class="g-ev" style="left:22.951%; width:6.557%"></div>
+            </div>
           </div>
           <div class="g-row">
-            <div class="g-label">WorldFood Moscow<small>поездка 14 - 18.09 · Москва</small></div>
-            <div class="g-track"><div class="g-trip" style="left:21.311%; width:8.197%"></div><div class="g-ev" style="left:22.951%; width:6.557%"></div></div>
+            <div class="g-label">Дентал-Экспо ⭐ + ПаркЗоо<small>поездка 20 - 25.09 · Крокус Экспо</small></div>
+            <div class="g-track">
+              <div class="g-trip" style="left:31.148%; width:9.836%"></div>
+              <div class="g-ev" style="left:32.787%; width:6.557%"></div>
+              <div class="g-ev" style="left:36.066%; width:4.918%; top:auto; bottom:6px; height:8px;"></div>
+            </div>
           </div>
           <div class="g-row">
-            <div class="g-label">Дентал-Экспо ⭐<small>поездка 20 - 25.09 · Москва</small></div>
-            <div class="g-track"><div class="g-trip" style="left:31.148%; width:9.836%"></div><div class="g-ev" style="left:32.787%; width:6.557%"></div></div>
+            <div class="g-label">BUYBRAND Expo ⭐<small>поездка 28.09 - 01.10 · Тимирязев Центр</small></div>
+            <div class="g-track">
+              <div class="g-trip" style="left:44.262%; width:6.557%"></div>
+              <div class="g-ev" style="left:45.902%; width:4.918%"></div>
+            </div>
           </div>
           <div class="g-row">
-            <div class="g-label">ПаркЗоо<small>та же поездка · дни 23 - 25.09</small></div>
-            <div class="g-track"><div class="g-trip" style="left:31.148%; width:9.836%"></div><div class="g-ev" style="left:36.066%; width:4.918%"></div></div>
+            <div class="g-label">InterCHARM ⭐<small>поездка 13 - 16.10 · Крокус Экспо</small></div>
+            <div class="g-track">
+              <div class="g-trip" style="left:68.852%; width:6.557%"></div>
+              <div class="g-ev" style="left:70.492%; width:4.918%"></div>
+            </div>
           </div>
           <div class="g-row">
-            <div class="g-label">BUYBRAND Expo ⭐<small>поездка 28.09 - 01.10 · Москва</small></div>
-            <div class="g-track"><div class="g-trip" style="left:44.262%; width:6.557%"></div><div class="g-ev" style="left:45.902%; width:4.918%"></div></div>
+            <div class="g-label">РАППА Осень<small>опция · поездка 20 - 22.10 · ВДНХ</small></div>
+            <div class="g-track">
+              <div class="g-trip" style="left:80.328%; width:4.918%"></div>
+              <div class="g-ev" style="left:81.967%; width:3.279%"></div>
+            </div>
           </div>
           <div class="g-row">
-            <div class="g-label">InterCHARM<small>поездка 13 - 16.10 · Москва</small></div>
-            <div class="g-track"><div class="g-trip" style="left:68.852%; width:6.557%"></div><div class="g-ev" style="left:70.492%; width:4.918%"></div></div>
-          </div>
-          <div class="g-row">
-            <div class="g-label">PIR Expo ⭐<small>поездка 25 - 29.10 · Москва</small></div>
-            <div class="g-track"><div class="g-trip" style="left:88.525%; width:8.197%"></div><div class="g-ev" style="left:90.164%; width:6.557%"></div></div>
+            <div class="g-label">PIR Expo ⭐<small>поездка 25 - 29.10 · Крокус Экспо</small></div>
+            <div class="g-track">
+              <div class="g-trip" style="left:88.525%; width:8.197%"></div>
+              <div class="g-ev" style="left:90.164%; width:6.557%"></div>
+            </div>
           </div>
         </div>
         <div class="g-legend">
-          <span><i class="g-key-trip"></i> поездка (вылет - возврат)</span>
-          <span><i class="g-key-ev"></i> дни на мероприятии</span>
-          <span><i class="g-key-we"></i> выходные - дома в Саратове</span>
+          <span><i class="g-key-trip"></i>поездка: выезд - возврат</span>
+          <span><i class="g-key-ev"></i>дни на площадке</span>
+          <span><i class="g-key-we"></i>выходные дома</span>
         </div>
       </div>
     </div>
+    <p class="sub">Все выходные - дома в Саратове. Неделя 08 - 12.09 освободилась после снятия РАРЧ и
+    идёт под конвертацию воронки первой поездки: созвоны и встречи по контактам с ОТДЫХ.</p>
   </section>
+  <section>
+    <h2>Выставки окна: что это за площадки</h2>
+    <p class="sub">Данные сверены с сайтами организаторов 31.08 - 01.09.2026. «Кто на стендах» -
+    принципиальная строка: она показывает, с кем реально идёт разговор на площадке.</p>
 
+    <div class="expo">
+
+      <div class="expo-item">
+        <div class="expo-head">
+          <h3>ОТДЫХ Leisure 2026</h3>
+          <span class="expo-date">2 - 4 сентября</span>
+          <span class="expo-badge free">билет 0 ₽ · зарегистрирован</span>
+        </div>
+        <p class="expo-place">32-й Международный форум-выставка по туризму · УВК «Тимирязев Центр», Москва, Верхняя аллея, 6 · <a href="https://tourismexpo.ru/" target="_blank" rel="noopener">tourismexpo.ru</a> · горячая линия +7 (929) 903-70-24</p>
+        <dl class="expo-grid">
+          <div><dt>Ниша</dt><dd>Туризм: базы отдыха, санатории, глэмпинги (Э2)</dd></div>
+          <div><dt>Масштаб</dt><dd>200+ экспонентов, 10 000+ профессионалов отрасли</dd></div>
+          <div><dt>Площадка</dt><dd>Тимирязев Центр, павильон «Вавилов»</dd></div>
+          <div><dt>Регистрация</dt><dd>Оформлена 29.08, билет на почте</dd></div>
+        </dl>
+        <p class="expo-stand"><b>Кто на стендах:</b> сами объекты размещения, туроператоры и региональные
+        туристические администрации - продают себя турагентствам. Это редкий случай, когда наша ниша
+        стоит на стендах, а не ходит по ним.</p>
+      </div>
+
+      <div class="expo-item">
+        <div class="expo-head">
+          <h3>WorldFood Moscow</h3>
+          <span class="expo-date">15 - 18 сентября</span>
+          <span class="expo-badge free">билет 0 ₽ по промокоду</span>
+        </div>
+        <p class="expo-place">Крокус Экспо, павильон 3 (м. Мякинино) · 15 - 17 сентября 10:00 - 18:00, 18 сентября 10:00 - 16:00 · <a href="https://expoworldfood.com/" target="_blank" rel="noopener">expoworldfood.com</a></p>
+        <dl class="expo-grid">
+          <div><dt>Ниша</dt><dd>Доставка еды, фуд (Э1)</dd></div>
+          <div><dt>Билет</dt><dd>Промокод <b>wfm26INT</b> - 0 ₽. Без него 500 - 1 000 ₽ онлайн, 1 000 - 1 500 ₽ в кассе</dd></div>
+          <div><dt>Организатор</dt><dd>ITE Group</dd></div>
+          <div><dt>Регистрация</dt><dd>Не завершена: форма требует код с почты, письмо не доходит</dd></div>
+        </dl>
+        <p class="expo-stand"><b>Кто на стендах:</b> производители и поставщики продуктов питания и напитков.
+        Посетители - ритейл, дистрибуция, HoReCa, опт.</p>
+      </div>
+
+      <div class="expo-item">
+        <div class="expo-head">
+          <h3>Дентал-Экспо 2026 ⭐</h3>
+          <span class="expo-date">21 - 24 сентября</span>
+          <span class="expo-badge free">билет 0 ₽ · зарегистрирован</span>
+        </div>
+        <p class="expo-place">60-й Московский международный стоматологический форум · Крокус Экспо, павильон 2, залы 5, 7, 8 · 21 - 23 сентября 10:00 - 18:00, 24 сентября 10:00 - 14:00 · <a href="https://www.dental-expo.com/dental-expo" target="_blank" rel="noopener">dental-expo.com</a></p>
+        <dl class="expo-grid">
+          <div><dt>Ниша</dt><dd>Стоматологии (Э1+Э2)</dd></div>
+          <div><dt>Масштаб</dt><dd>Крупнейшее отраслевое событие России и СНГ</dd></div>
+          <div><dt>Регистрация</dt><dd>Оформлена 31.08, пригласительный билет на почте</dd></div>
+          <div><dt>Поездка</dt><dd>Одна с ПаркЗоо: обе в Крокусе, 20 - 25.09</dd></div>
+        </dl>
+        <p class="expo-stand"><b>Кто на стендах:</b> производители и дистрибьюторы стоматологического
+        оборудования и материалов, зуботехнические лаборатории, сети клиник со своими стендами.
+        Частные клиники в основном ходят как посетители.</p>
+      </div>
+
+      <div class="expo-item">
+        <div class="expo-head">
+          <h3>ПаркЗоо 2026</h3>
+          <span class="expo-date">23 - 25 сентября</span>
+          <span class="expo-badge free">билет 0 ₽ · зарегистрирован</span>
+        </div>
+        <p class="expo-place">Международная выставка зооиндустрии · Крокус Экспо, «Экспо 1», залы 3 и 4, этаж 1 · 9:30 - 18:00 · <a href="https://parkzoo.ru/" target="_blank" rel="noopener">parkzoo.ru</a></p>
+        <dl class="expo-grid">
+          <div><dt>Ниша</dt><dd>Ветклиники, груминг (Э2)</dd></div>
+          <div><dt>Масштаб</dt><dd>330 экспонентов, 18 000 м², 15 000 профессиональных участников</dd></div>
+          <div><dt>Деловая программа</dt><dd>День НАЗ, XV фестиваль груминга, ветеринарный фармацевтический конгресс</dd></div>
+          <div><dt>Регистрация</dt><dd>Обязательна для входа, оформлена 31.08</dd></div>
+        </dl>
+        <p class="expo-stand"><b>Кто на стендах:</b> производители зоотоваров и кормов, дистрибьюторы,
+        владельцы собственных торговых марок. Ветклиники и груминг-салоны - в проходах.</p>
+      </div>
+
+      <div class="expo-item">
+        <div class="expo-head">
+          <h3>BUYBRAND Expo ⭐</h3>
+          <span class="expo-date">29 сентября - 1 октября</span>
+          <span class="expo-badge pay">билет 1 500 ₽</span>
+        </div>
+        <p class="expo-place">24-я выставка франшиз и инвестиционных возможностей · Тимирязев Центр, Москва, Верхняя аллея, 6с1 · <a href="https://buybrandexpo.com/" target="_blank" rel="noopener">buybrandexpo.com</a></p>
+        <dl class="expo-grid">
+          <div><dt>Ниша</dt><dd>Франшизы, сети (Э1)</dd></div>
+          <div><dt>Масштаб</dt><dd>170+ экспонентов, 5 086 посетителей, 110 спикеров, 22 года истории</dd></div>
+          <div><dt>Билет</dt><dd>«Стандарт» 1 500 ₽; «Бизнес» 5 000 ₽ - продажи закрываются 18.09</dd></div>
+          <div><dt>Ходим</dt><dd>Все три дня, как решено 26.08</dd></div>
+        </dl>
+        <p class="expo-stand"><b>Кто на стендах:</b> франчайзеры с инвестициями от 0,6 до 300+ млн ₽,
+        B2B-компании и инвестпроекты. <b>Лучшая площадка окна:</b> ЦА стоит на стендах и сама
+        заинтересована в разговоре - им нужны заявки на франшизу.</p>
+      </div>
+
+      <div class="expo-item">
+        <div class="expo-head">
+          <h3>InterCHARM ⭐</h3>
+          <span class="expo-date">14 - 17 октября</span>
+          <span class="expo-badge free">билет 0 ₽ · бейдж получен</span>
+        </div>
+        <p class="expo-place">33-я Международная выставка парфюмерно-косметической отрасли · Крокус Экспо, павильон 3, залы 13, 14, 15, 17, 18 · 14 - 16 октября 10:00 - 18:00, 17 октября 10:00 - 16:00 · <a href="https://intercharm.ru/" target="_blank" rel="noopener">intercharm.ru</a></p>
+        <dl class="expo-grid">
+          <div><dt>Ниша</dt><dd>Бьюти, косметология (Э1+Э2)</dd></div>
+          <div><dt>Масштаб</dt><dd>1 700+ поставщиков из 30 стран, 96 000+ профессионалов, 60 000 м²</dd></div>
+          <div><dt>Билет</dt><dd>Бейдж 500 ₽, промокод <b>КРАСОТА</b> - скидка 100%, к оплате 0 ₽</dd></div>
+          <div><dt>Уходим</dt><dd>В пятницу 16.10, суббота - дорога домой</dd></div>
+        </dl>
+        <p class="expo-stand"><b>Кто на стендах:</b> производители косметики, парфюмерии, БАДов, бытовой
+        химии, упаковки и оборудования. Посетители - ритейл, дистрибуция, салоны, клиники, частные мастера.</p>
+      </div>
+
+      <div class="expo-item opt">
+        <div class="expo-head">
+          <h3>РАППА ЭКСПО Осень</h3>
+          <span class="expo-date">21 - 22 октября</span>
+          <span class="expo-badge free">билет 0 ₽ · зарегистрирован</span>
+        </div>
+        <p class="expo-place">48-я Международная выставка «Аттракционы и развлекательное оборудование» · ВДНХ, павильон 57 · 9:00 - 19:00 · <a href="https://raapa-expo.ru/" target="_blank" rel="noopener">raapa-expo.ru</a></p>
+        <dl class="expo-grid">
+          <div><dt>Ниша</dt><dd>Парки, развлекательные центры (Э2)</dd></div>
+          <div><dt>Статус</dt><dd>Опция: отдельная поездка ради одной выставки Э2, решение за Никитой</dd></div>
+          <div><dt>Программа</dt><dd>Деловой форум профессионалов индустрии развлечений</dd></div>
+          <div><dt>Регистрация</dt><dd>Оформлена 31.08, бесплатный билет</dd></div>
+        </dl>
+        <p class="expo-stand"><b>Кто на стендах:</b> производители аттракционов и паркового оборудования,
+        поставщики решений для детских и спортивных площадок. Парки и РЦ - посетители.</p>
+      </div>
+
+      <div class="expo-item">
+        <div class="expo-head">
+          <h3>PIR Expo ⭐</h3>
+          <span class="expo-date">26 - 29 октября</span>
+          <span class="expo-badge pay">билет 1 000 ₽ до 25.10</span>
+        </div>
+        <p class="expo-place">29-я выставка индустрии гостеприимства · Крокус Экспо, павильон 3, залы 13, 14, 15 · <a href="https://pirexpo.com/" target="_blank" rel="noopener">pirexpo.com</a> · +7 (495) 118-27-13</p>
+        <dl class="expo-grid">
+          <div><dt>Ниша</dt><dd>HoReCa, доставка еды, готовая еда (Э1+Э2)</dd></div>
+          <div><dt>Масштаб</dt><dd>800 компаний, 350+ мероприятий, 700+ экспертов</dd></div>
+          <div><dt>Билет</dt><dd>1 000 ₽ до 25 октября, с 26-го - 1 500 ₽. Даёт вход на все 4 дня</dd></div>
+          <div><dt>Направления</dt><dd>Ресторан · Кофе · Отель · Пищевое производство и готовая еда</dd></div>
+        </dl>
+        <p class="expo-stand"><b>Кто на стендах:</b> поставщики оборудования, продуктов и услуг для
+        ресторанов, отелей и кофеен. Рестораторы и отельеры ходят как посетители.</p>
+      </div>
+
+    </div>
+
+    <div class="block">
+      <h2>Что это значит для разметки ниш</h2>
+      <p>Ниши в программе размечены по посетителям выставки, а на стендах в большинстве случаев стоят
+      их поставщики. На ОТДЫХ и BUYBRAND наша ниша стоит на стендах - это лучшие площадки окна.
+      На остальных выставках разговор пойдёт с экспонентами-поставщиками: это тоже рекламодатели с
+      бюджетами, но другая ниша, чем записана в плане. Разметку стоит пересобрать под тех, кто реально
+      стоит на стендах - вынесено отдельным вопросом.</p>
+    </div>
+  </section>
   <section>
     <h2>Расходы по мероприятиям</h2>
-    <p class="sub">Ставки: авиаплечо Саратов - Москва ~6 500 ₽, отель Москва 3★ с завтраком ~6 000 ₽/ночь, Екатеринбург ~5 000 ₽/ночь (утверждены 08.07.2026); суточные 2 000 ₽/день - расчёт от реального дня, обоснование ниже. Мероприятия одной поездки делят перелёты и отель: у каждой строки - её доля, стоимость перелёта «туда» стоит на первом событии поездки, «обратно» - на последнем. Сумма всех «Итого» равна итогу сметы.</p>
+    <p class="sub">Мероприятия одной поездки делят проезд и отель: у каждой строки своя доля. Проезд «туда» стоит на первом событии поездки, «обратно» - на последнем.</p>
     <div class="table-wrap">
       <table>
         <thead>
-          <tr>
-            <th>Месяц</th><th>Дата</th><th>Мероприятие</th>
-            <th>Дата туда</th><th>Самолёт туда</th>
-            <th>Дата обратно</th><th>Самолёт обратно</th>
-            <th>Отель с завтраком</th><th>Суточные</th><th>Билет на мероприятие</th><th>Итого</th>
-          </tr>
+          <tr><th>Месяц</th><th>Даты</th><th>Мероприятие</th><th>Выезд</th><th>Проезд туда</th><th>Возврат</th><th>Проезд обратно</th><th>Отель</th><th>Суточные</th><th>Билет</th><th>Итого</th></tr>
         </thead>
         <tbody>
           <tr>
             <td class="month-td">Сентябрь</td><td class="num">02-04.09<span class="note">ср - пт</span></td>
-            <td class="ev">Конгресс катарактальной и рефракционной хирургии ⭐<span class="note tag">Э1 · офтальмология · ЦМТ, Москва</span></td>
-            <td class="num">вт 01.09</td>
-            <td class="num">6 500</td>
-            <td class="num">пт 04.09</td>
-            <td class="num">6 500</td>
+            <td class="ev">ОТДЫХ Leisure<span class="note tag">Э2 · туризм, санатории, глэмпинги · Тимирязев Центр</span></td>
+            <td class="num">вт 01.09</td><td class="num">6 500</td>
+            <td class="num">пт 04.09</td><td class="num">6 500</td>
             <td class="num">18 000<span class="note">3 ночи</span></td>
             <td class="num">8 000<span class="note">4 дня</span></td>
-            <td class="num free">0<span class="note">бесплатно, рег. reg.oor.ru</span></td>
-            <td class="rowtotal">39 000</td>
-          </tr>
-          <tr>
-            <td class="month-td">Сентябрь</td><td class="num">09-12.09<span class="note">ср - сб</span></td>
-            <td class="ev">XXXVI конференция РАРЧ ⭐<span class="note tag">Э1 · клиники ЭКО · кластер «Ломоносов», Москва</span></td>
-            <td class="num">вт 08.09</td>
-            <td class="num">6 500</td>
-            <td class="num">сб 12.09</td>
-            <td class="num">6 500</td>
-            <td class="num">24 000<span class="note">4 ночи</span></td>
-            <td class="num">10 000<span class="note">5 дней</span></td>
-            <td class="num">18 500<span class="note">делегат, не член РАРЧ</span></td>
-            <td class="rowtotal">65 500</td>
+            <td class="num free">0<span class="note">зарегистрирован</span></td>
+            <td class="num strong">39 000</td>
           </tr>
           <tr>
             <td class="month-td">Сентябрь</td><td class="num">15-18.09<span class="note">вт - пт</span></td>
             <td class="ev">WorldFood Moscow<span class="note tag">Э1 · доставка еды · Крокус Экспо</span></td>
-            <td class="num">пн 14.09</td>
-            <td class="num">6 500</td>
-            <td class="num">пт 18.09</td>
-            <td class="num">6 500</td>
+            <td class="num">пн 14.09</td><td class="num">6 500</td>
+            <td class="num">пт 18.09</td><td class="num">6 500</td>
             <td class="num">24 000<span class="note">4 ночи</span></td>
             <td class="num">10 000<span class="note">5 дней</span></td>
-            <td class="num">500<span class="note">онлайн</span></td>
-            <td class="rowtotal">47 500</td>
+            <td class="num free">0<span class="note">промокод wfm26INT</span></td>
+            <td class="num strong">47 000</td>
           </tr>
           <tr>
             <td class="month-td">Сентябрь</td><td class="num">21-24.09<span class="note">пн - чт</span></td>
             <td class="ev">Дентал-Экспо ⭐<span class="note tag">Э1+Э2 · стоматологии · Крокус Экспо</span></td>
-            <td class="num">вс 20.09</td>
-            <td class="num">6 500</td>
-            <td class="num">пт 25.09<span class="note">одной поездкой с ПаркЗоо</span></td>
-            <td class="same">в строке ПаркЗоо</td>
+            <td class="num">вс 20.09</td><td class="num">6 500</td>
+            <td class="num">пт 25.09<span class="note">одной поездкой с ПаркЗоо</span></td><td class="num same">-</td>
             <td class="num">18 000<span class="note">3 ночи</span></td>
             <td class="num">8 000<span class="note">4 дня</span></td>
-            <td class="num free">0<span class="note">ранняя онлайн-регистрация</span></td>
-            <td class="rowtotal">32 500</td>
+            <td class="num free">0<span class="note">зарегистрирован</span></td>
+            <td class="num strong">32 500</td>
           </tr>
           <tr>
             <td class="month-td">Сентябрь</td><td class="num">23-25.09<span class="note">ср - пт</span></td>
             <td class="ev">ПаркЗоо<span class="note tag">Э2 · ветклиники, груминг · Крокус Экспо, та же поездка</span></td>
-            <td class="num same">вс 20.09<span class="note">та же поездка</span></td>
-            <td class="same">-</td>
-            <td class="num">пт 25.09</td>
-            <td class="num">6 500</td>
+            <td class="num same">вс 20.09<span class="note">та же поездка</span></td><td class="num same">-</td>
+            <td class="num">пт 25.09</td><td class="num">6 500</td>
             <td class="num">12 000<span class="note">2 ночи</span></td>
             <td class="num">4 000<span class="note">2 дня</span></td>
-            <td class="num free">0<span class="note">B2B, регистрация обязательна</span></td>
-            <td class="rowtotal">22 500</td>
+            <td class="num free">0<span class="note">зарегистрирован</span></td>
+            <td class="num strong">22 500</td>
           </tr>
           <tr>
             <td class="month-td">Сентябрь</td><td class="num">29.09-01.10<span class="note">вт - чт</span></td>
             <td class="ev">BUYBRAND Expo ⭐<span class="note tag">Э1 · франшизы · Тимирязев Центр, все 3 дня</span></td>
-            <td class="num">пн 28.09</td>
-            <td class="num">6 500</td>
-            <td class="num">чт 01.10<span class="note">по окончании</span></td>
-            <td class="num">6 500</td>
+            <td class="num">пн 28.09</td><td class="num">6 500</td>
+            <td class="num">чт 01.10<span class="note">по окончании</span></td><td class="num">6 500</td>
             <td class="num">18 000<span class="note">3 ночи</span></td>
             <td class="num">8 000<span class="note">4 дня</span></td>
-            <td class="num">2 000<span class="note">тариф «Старт»</span></td>
-            <td class="rowtotal">41 000</td>
+            <td class="num">1 500<span class="note">тариф «Стандарт»</span></td>
+            <td class="num strong">40 500</td>
           </tr>
           <tr>
             <td class="month-td">Октябрь</td><td class="num">14-17.10<span class="note">ср - сб</span></td>
-            <td class="ev">InterCHARM<span class="note tag">Э1+Э2 · бьюти, косметология · Крокус Экспо, уход в пт 16.10</span></td>
-            <td class="num">вт 13.10</td>
-            <td class="num">6 500</td>
-            <td class="num">пт 16.10</td>
-            <td class="num">6 500</td>
+            <td class="ev">InterCHARM ⭐<span class="note tag">Э1+Э2 · бьюти, косметология · Крокус Экспо, уход в пт 16.10</span></td>
+            <td class="num">вт 13.10</td><td class="num">6 500</td>
+            <td class="num">пт 16.10</td><td class="num">6 500</td>
             <td class="num">18 000<span class="note">3 ночи</span></td>
             <td class="num">8 000<span class="note">4 дня</span></td>
-            <td class="num">500<span class="note">бейдж; по промокоду «КРАСОТА» - 0</span></td>
-            <td class="rowtotal">39 500</td>
+            <td class="num free">0<span class="note">промокод «КРАСОТА»</span></td>
+            <td class="num strong">39 000</td>
           </tr>
           <tr>
             <td class="month-td">Октябрь</td><td class="num">26-29.10<span class="note">пн - чт</span></td>
             <td class="ev">PIR Expo ⭐<span class="note tag">Э1+Э2 · HoReCa, доставка еды · Крокус Экспо</span></td>
-            <td class="num">вс 25.10</td>
-            <td class="num">6 500</td>
-            <td class="num">чт 29.10</td>
-            <td class="num">6 500</td>
+            <td class="num">вс 25.10</td><td class="num">6 500</td>
+            <td class="num">чт 29.10</td><td class="num">6 500</td>
             <td class="num">24 000<span class="note">4 ночи</span></td>
             <td class="num">10 000<span class="note">5 дней</span></td>
             <td class="num">1 000<span class="note">онлайн до 25.10</span></td>
-            <td class="rowtotal">48 000</td>
+            <td class="num strong">48 000</td>
+          </tr>
+          <tr>
+            <td class="month-td">Опция</td><td class="num">21-22.10<span class="note">ср - чт</span></td>
+            <td class="ev">РАППА ЭКСПО Осень<span class="note tag">Э2 · парки, развлекательные центры · ВДНХ, пав. 57</span></td>
+            <td class="num">вт 20.10</td><td class="num">6 500</td>
+            <td class="num">чт 22.10</td><td class="num">6 500</td>
+            <td class="num">12 000<span class="note">2 ночи</span></td>
+            <td class="num">6 000<span class="note">3 дня</span></td>
+            <td class="num free">0<span class="note">зарегистрирован</span></td>
+            <td class="num strong">31 000</td>
           </tr>
         </tbody>
       </table>
@@ -370,48 +555,82 @@
 
   <section>
     <h2>Итоги</h2>
-    <p class="sub">Границы месяцев - по строкам таблицы расходов; поездка BUYBRAND (28.09 - 01.10) целиком отнесена к сентябрю, месяцу старта. Календарь оплат опережает месяцы поездок: сентябрь оплачивается сразу после согласования, октябрь - в течение сентября.</p>
+    <p class="sub">Поездка BUYBRAND (28.09 - 01.10) целиком отнесена к сентябрю, месяцу старта. Проезд на первую поездку уже куплен 30.08.</p>
     <div class="table-wrap">
       <table class="totals">
-        <thead>
-          <tr><th>Статья</th><th>Сентябрь</th><th>Октябрь</th><th>Всего</th></tr>
-        </thead>
+        <thead><tr><th>Статья</th><th>Сентябрь</th><th>Октябрь</th><th>Всего</th></tr></thead>
         <tbody>
-          <tr><td>Перелёты, 14 плеч</td><td>65 000</td><td>26 000</td><td>91 000 ₽</td></tr>
-          <tr><td>Отели с завтраком: 26 ночей, Москва</td><td>114 000</td><td>42 000</td><td>156 000 ₽</td></tr>
-          <tr><td>Суточные, 2 000 ₽/день: 24 дня + 9 дней</td><td>48 000</td><td>18 000</td><td>66 000 ₽</td></tr>
-          <tr><td>Билеты на мероприятия, все 8</td><td>21 000</td><td>1 500</td><td>22 500 ₽</td></tr>
-          <tr class="strong"><td>Итого по смете</td><td>248 000</td><td>87 500</td><td>335 500 ₽</td></tr>
-          <tr><td>Резерв 10%: билеты на сентябрь покупаются уже впритык</td><td>~24 800</td><td>~8 800</td><td>~33 600 ₽</td></tr>
-          <tr class="final"><td>К согласованию</td><td>≈ 273 000</td><td>≈ 96 000</td><td>≈ 369 000 ₽</td></tr>
+          <tr><td>Проезд, 12 плеч</td><td>52 000</td><td>26 000</td><td>78 000 ₽</td></tr>
+          <tr><td>Отели с завтраком: 22 ночи, Москва</td><td>90 000</td><td>42 000</td><td>132 000 ₽</td></tr>
+          <tr><td>Суточные, 2 000 ₽/день: 19 дней + 9 дней</td><td>38 000</td><td>18 000</td><td>56 000 ₽</td></tr>
+          <tr><td>Билеты на мероприятия, все 6</td><td>1 500</td><td>1 000</td><td>2 500 ₽</td></tr>
+          <tr class="strong"><td>Итого по смете</td><td>181 500</td><td>87 000</td><td>268 500 ₽</td></tr>
+          <tr><td>Резерв 10%</td><td>~18 200</td><td>~8 700</td><td>~26 900 ₽</td></tr>
+          <tr class="final"><td>К согласованию</td><td>≈ 200 000</td><td>≈ 95 000</td><td>≈ 295 000 ₽</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="block">
+      <h2>Почему билеты почти ничего не стоят</h2>
+      <p>Выставка зарабатывает на экспонентах, поэтому вход посетителю бесплатный или символический:
+      из шести мероприятий пять стоят 0 ₽, PIR - 1 000 ₽, BUYBRAND - 1 500 ₽. Конференция зарабатывает
+      на участниках, поэтому её билет стоит десятки тысяч. Это простой признак: если за вход просят
+      много - там нет стендов и продавать некому. Билеты - 2 500 ₽ из 268 500 ₽ сметы, меньше процента.
+      Смета - это дорога и жильё.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Что убрано из программы и почему</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Мероприятие</th><th>Стоило бы</th><th>Причина</th></tr></thead>
+        <tbody>
+          <tr><td class="ev">XXXVI конференция РАРЧ<span class="note tag">09 - 12.09, кластер «Ломоносов»</span></td><td class="num">65 500 ₽</td><td>Выставка при конференции есть, но на стендах производители медтехники и расходников. Клиники ЭКО - делегаты в зале. Взнос 21 000 ₽ + НДС - это вход в зал</td></tr>
+          <tr><td class="ev">Конгресс катарактальной хирургии<span class="note tag">02 - 04.09, ЦМТ</span></td><td class="num">-</td><td>Стендов нет, заседание. Поездка сохранена: в те же дни идёт выставка ОТДЫХ Leisure. Конгресс посещается попутно, без затрат</td></tr>
+          <tr><td class="ev">Headconf, конференция hh.ru<span class="note tag">08.10, площадка TAU</span></td><td class="num">60 000 ₽</td><td>Только доклады, экспозиции нет. Снято 26.08</td></tr>
+          <tr><td class="ev">XXVII Саммит HR-директоров<span class="note tag">14 - 15.10, Lotte Hotel</span></td><td class="num">~120 000 ₽</td><td>Отельный формат, выставка HR-решений камерная, аудитория не наша. Снято 26.08</td></tr>
+          <tr><td class="ev">Персонал Экспо<span class="note tag">07 - 08.09, ЦМТ</span></td><td class="num">25 500 ₽</td><td>Стенды занимают HR-сервисы; компании с массовым наймом ходят как посетители. Снято 26.08</td></tr>
+          <tr><td class="ev">100+ TechnoBuild<span class="note tag">29.09 - 02.10, Екатеринбург</span></td><td class="num">~15 000 ₽ логистики</td><td>Выставка крупная (612 экспонентов), но аудитория инженерная: проектировщики, подрядчики, стройтех. Маркетинг-ЛПР застройщиков там не бывают. Снято 26.08</td></tr>
+          <tr><td class="ev">Юрбизнесфорум<span class="note tag">02.09, отель «Сафмар Грандъ»</span></td><td class="num">-</td><td>Издание 2026 организатором не проводится, на сайте только форум 2025 года</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
   <section>
-    <h2>Обоснование суточных</h2>
-    <ol class="notes">
-      <li><b>Ставка 2 000 ₽/день</b> - расчёт от реального дня командировки: проезд по городу до площадки ~300 ₽ (метро/МЦД 2-4 поездки: Крокус Экспо - м. Мякинино, ЦМТ - м. Выставочная, плюс резерв на такси), обед - бизнес-ланч ~700 ₽, ужин - кафе среднего сегмента ~1 000 ₽. Завтрак в суточные не входит - он уже в ставке отеля. Ставка единая для Москвы и Екатеринбурга.</li>
-      <li><b>Счёт дней:</b> суточные начисляются за каждый календарный день поездки, включая день выезда и день возвращения (п. 4 Положения о служебных командировках, постановление Правительства РФ № 749 от 13.10.2008). Пример: конгресс - вылет вт 01.09, возврат пт 04.09, это 4 дня × 2 000 ₽ = 8 000 ₽.</li>
-      <li><b>Налоговая справка:</b> необлагаемый лимит суточных - 700 ₽/день (п. 1 ст. 217 НК РФ); часть сверх лимита (1 300 ₽/день) при оформлении либо облагается НДФЛ, либо закрывается чеками как компенсация фактических расходов на проезд и питание - решить с бухгалтерией при согласовании.</li>
-      <li><b>Итог по смете:</b> 33 дня × 2 000 ₽ = 66 000 ₽ (сентябрь 24 дня = 48 000 ₽, октябрь 9 дней = 18 000 ₽). Разбивка по поездкам: 4 + 5 + 5 + 6 + 4 + 4 + 5 = 33 дня.</li>
-    </ol>
+    <div class="block">
+      <h2>Обоснование суточных</h2>
+      <p><b>Ставка 2 000 ₽/день</b> - расчёт от реального дня командировки: проезд по городу до площадки
+      ~300 ₽ (Крокус Экспо - м. Мякинино, ВДНХ - м. ВДНХ, Тимирязев Центр - Верхняя аллея, 6, плюс резерв
+      на такси), обед ~700 ₽, ужин ~1 000 ₽. Завтрак в суточные не входит, он в ставке отеля.</p>
+      <p><b>Счёт дней:</b> суточные начисляются за каждый календарный день поездки, включая день выезда и
+      день возвращения (п. 4 Положения о служебных командировках, постановление Правительства РФ № 749
+      от 13.10.2008).</p>
+      <p><b>Налоговая справка:</b> необлагаемый лимит суточных - 700 ₽/день (п. 1 ст. 217 НК РФ); часть
+      сверх лимита либо облагается НДФЛ, либо закрывается чеками как компенсация фактических расходов -
+      решить с бухгалтерией при согласовании.</p>
+      <p><b>Итог по смете:</b> 28 дней × 2 000 ₽ = 56 000 ₽ (сентябрь 19 дней, октябрь 9 дней). С опциональной
+      РАППА - 31 день, 62 000 ₽.</p>
+    </div>
   </section>
 
   <section>
-    <h2>Важные поправки и уточнения</h2>
-    <ol class="notes">
-      <li><b>Исключены решением руководителя направления 26.08:</b> Персонал Экспо (билет для не-HR гостя 25 500 ₽ + 2 дня поездки), XXVII Саммит HR-директоров (~120 000 ₽, точная цена только по запросу) и Headconf (60 000 ₽) - формат hh-конференции контентный, для HR-специалистов, а не площадка контактов с поставщиками: продавать там некому; ниша HR-найма отрабатывается прямыми продажами. 100+ TechnoBuild (Екатеринбург) - аудитория форума инженерная (проектировщики, подрядчики, стройтех), маркетинг-ЛПР застройщиков концентрируется на форуме «Движение» (Сочи, июнь 2027), где ниша и добирается; взамен BUYBRAND посещается все 3 дня.</li>
-      <li><b>Конгресс офтальмологов перенесён.</b> В календаре программы стояли даты 08-10.10 (МНТК). По официальному сайту cataract-congress.ru издание 2026 проходит 02-04.09 в ЦМТ, к 40-летию МНТК. Смета построена по фактическим датам; до вылета 01.09 осталась неделя, регистрация и покупка авиабилетов нужны сразу после согласования.</li>
-      <li><b>РАРЧ:</b> взнос 18 500 ₽ - тариф «не член РАРЧ», идёт последний период оплаты.</li>
-      <li><b>Почему часть билетов платная:</b> выставки (Дентал-Экспо, ПаркЗоо, PIR, BUYBRAND) зарабатывают на экспонентах - вход для посетителей бесплатный или символический. Конференции (РАРЧ, 18 500 ₽) зарабатывают на участниках - билет включает деловую программу и нетворкинг.</li>
-      <li>Ставки перелётов и отелей - плановые ориентиры июля 2026 при покупке за 3-4 недели; сентябрь покупается позже норматива, на это заложен резерв 10%.</li>
-      <li>Из Э2 включён только ПаркЗоо: он идёт в те же дни и на той же площадке, что Дентал-Экспо, и не требует отдельной поездки. «Старшее поколение» (Э1, СПб) закрывают Фархутдинов и Глушонков без командировочных расходов.</li>
-    </ol>
+    <div class="block">
+      <h2>Что осталось сделать</h2>
+      <p><b>WorldFood.</b> Билет бесплатный по промокоду wfm26INT, но форма организатора требует код
+      подтверждения с почты, и письмо не доходит. Пройти регистрацию с рабочей почты или написать на
+      visitors.registration@ite.group.</p>
+      <p><b>Оплатить билеты:</b> BUYBRAND 1 500 ₽ и PIR Expo 1 000 ₽ до 25 октября.</p>
+      <p><b>Решить по РАППА Осень:</b> отдельная поездка 20 - 22.10 ради одной выставки Э2, 31 000 ₽.
+      Регистрация уже бесплатно оформлена, вопрос только в поездке.</p>
+    </div>
   </section>
 
-  <p class="foot">Источники цен билетов: официальные сайты мероприятий, проверено 26.08.2026. Подготовил Адам по поручению Никиты · Cerebro Click Out.</p>
+  <p class="foot">Cerebro · Click Out · программа выставок сентябрь - октябрь 2026 (смета v7 от 31.08.2026).
+  Даты и условия сверены с сайтами организаторов 31.08 - 01.09.2026. Материал для показа на выставках:
+  <a href="https://omenikarch.github.io/Click_Out_Expo/" target="_blank" rel="noopener">omenikarch.github.io/Click_Out_Expo</a> ·
+  опросник клиента: <a href="https://omenikarch.github.io/qnr-page/" target="_blank" rel="noopener">omenikarch.github.io/qnr-page</a></p>
 
 </div>
 
